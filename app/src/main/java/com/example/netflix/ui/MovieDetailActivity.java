@@ -46,10 +46,10 @@ public class MovieDetailActivity extends AppCompatActivity {
         tv_title = findViewById(R.id.detail_movie_title);
         tv_title.setText(movieTitle);
         //getSupportActionBar().setTitle(movieTitle);
-        //tv_description = findViewById(R.id.detail_movie_desc);
+        tv_description = findViewById(R.id.detail_movie_desc);
         // setup animation
-       // MovieCoverImg.setAnimation(AnimationUtils.loadAnimation(this, R.anim.scale_animation));
-       // play_fab.setAnimation(AnimationUtils.loadAnimation(this, R.anim.scale_animation));
+        MovieCoverImg.setAnimation(AnimationUtils.loadAnimation(this, R.anim.scale_animation));
+        play_fab.setAnimation(AnimationUtils.loadAnimation(this, R.anim.scale_animation));
 
 
     }
