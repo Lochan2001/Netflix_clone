@@ -1,6 +1,7 @@
 package com.example.netflix.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
@@ -48,7 +49,17 @@ public class MovieDetailActivity extends AppCompatActivity {
     void setupRvCast() {
 
         List<Cast> mdata = new ArrayList<>();
-        mdata.add(new Cast())
+        mdata.add(new Cast("name",R.drawable.a_moana_aulii_cravalho));
+        mdata.add(new Cast("name",R.drawable.b_moana_dwayne_johnson));
+        mdata.add(new Cast("name",R.drawable.c_moana_jemaine_clement));
+        mdata.add(new Cast("name",R.drawable.d_moana_alan_tudyk));
+        mdata.add(new Cast("name",R.drawable.e_moana_temuera_morrison));
+        mdata.add(new Cast("name",R.drawable.f_moana_nicole_scherzinger));
+
+        castAdapter = new CastAdapter(this,mdata);
+        RvCast.setAdapter(castAdapter);
+        RvCast.setLayoutManager(new LinearLayoutManager(this,LinearLayoutManager.HORIZONTAL,false));
+
     }
 
     void iniViews() {
