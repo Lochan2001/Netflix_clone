@@ -1,6 +1,7 @@
 package com.example.netflix.ui;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.view.animation.AnimationUtils;
@@ -9,13 +10,20 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.example.netflix.R;
+import com.example.netflix.adapters.CastAdapter;
+import com.example.netflix.models.Cast;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class MovieDetailActivity extends AppCompatActivity {
 
     private ImageView MovieThumbnailImg, MovieCoverImg;
     private TextView tv_title, tv_description;
     private FloatingActionButton play_fab;
+    private RecyclerView RvCast;
+    private CastAdapter castAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,9 +39,20 @@ public class MovieDetailActivity extends AppCompatActivity {
         // MovieThumbnailImg.setImageResource(imageResourceId);
 
         iniViews();
+
+        //setup list cast
+
+        setupRvCast();
+    }
+
+    void setupRvCast() {
+
+        List<Cast> mdata = new ArrayList<>();
+        mdata.add(new Cast())
     }
 
     void iniViews() {
+        RvCast = findViewById(R.id.rv_cast);
         play_fab = findViewById(R.id.play_fab);
         String movieTitle = getIntent().getExtras().getString("title");
         int imageResourceId = getIntent().getExtras().getInt("imgURL");
