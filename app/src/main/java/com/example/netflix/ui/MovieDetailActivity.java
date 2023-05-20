@@ -21,7 +21,7 @@ import java.util.List;
 public class MovieDetailActivity extends AppCompatActivity {
 
     private ImageView MovieThumbnailImg, MovieCoverImg;
-    private TextView tv_title, tv_description;
+    private TextView tv_title, tv_description,cast_name;
     private FloatingActionButton play_fab;
     private RecyclerView RvCast;
     private CastAdapter castAdapter;
@@ -81,6 +81,8 @@ public class MovieDetailActivity extends AppCompatActivity {
         MovieCoverImg.setAnimation(AnimationUtils.loadAnimation(this, R.anim.scale_animation));
         play_fab.setAnimation(AnimationUtils.loadAnimation(this, R.anim.scale_animation));
 
+        //cast_name = findViewById(R.id.item_cast_name);
+        //cast_name.setText();
 
     }
 }
